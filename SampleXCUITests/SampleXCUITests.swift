@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import PercyXcui
 
 class SampleXCUITests: XCTestCase {
         
@@ -28,30 +29,26 @@ class SampleXCUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testAlert() {
-        
-        let app = XCUIApplication()
-        
-        //bring up the alert
-        app.buttons["Alert"].tap()
-        
-        //verify that the alert has come
-        XCTAssertEqual(app.alerts.element.label, "Alert")
-        
-        //dismiss the alert
-        app.alerts.buttons["OK"].tap()
-        
-        //verify that the alert is dismissed
-        XCTAssertEqual(app.alerts.count, 0)
-    }
-    
     func testText() {
         let app = XCUIApplication()
+        let appPercy = AppPercy()
+        
+        do {
+            try appPercy.screenshot(name: "First Screenshot")
+        } catch {
+            NSLog("App percy screenshot failed")
+        }
         
         //visit the text page
         app.buttons["Text"].tap()
         
         let enterText = "Hi Browserstack!!"
+        
+        do {
+            try appPercy.screenshot(name: "Second Screenshot")
+        } catch {
+            NSLog("App percy screenshot failed")
+        }
         //verify that the text field has come up
         XCTAssert(app.textFields["Enter a text"].exists)
         

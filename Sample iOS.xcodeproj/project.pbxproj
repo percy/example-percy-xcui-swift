@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		120BE9EF20149DCF00F85F1E /* NavLocalTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BE9EE20149DCF00F85F1E /* NavLocalTesting.swift */; };
 		129187F12018BE35000865ED /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129187F02018BE35000865ED /* TextEditor.swift */; };
 		129187F32018C846000865ED /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129187F22018C846000865ED /* GradientBackground.swift */; };
+		2C5079AA29E81EBF00EEF54D /* PercyXcui in Frameworks */ = {isa = PBXBuildFile; productRef = 2C5079A929E81EBF00EEF54D /* PercyXcui */; };
 		E6A69A5A2032F58A0047EEBF /* SampleXCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A69A592032F58A0047EEBF /* SampleXCUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5079AA29E81EBF00EEF54D /* PercyXcui in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +144,9 @@
 				E6A69A5D2032F58A0047EEBF /* PBXTargetDependency */,
 			);
 			name = SampleXCUITests;
+			packageProductDependencies = (
+				2C5079A929E81EBF00EEF54D /* PercyXcui */,
+			);
 			productName = SampleXCUITests;
 			productReference = E6A69A572032F58A0047EEBF /* SampleXCUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -176,6 +181,9 @@
 				Base,
 			);
 			mainGroup = 120BE9CE20145CEE00F85F1E;
+			packageReferences = (
+				2C5079A829E81EBF00EEF54D /* XCRemoteSwiftPackageReference "percy-xcui-swift" */,
+			);
 			productRefGroup = 120BE9D820145CEF00F85F1E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,7 +368,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -373,7 +382,10 @@
 				DEVELOPMENT_TEAM = 8XPT93F9Q7;
 				INFOPLIST_FILE = "Sample iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.percy.example-xcui";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -389,7 +401,10 @@
 				DEVELOPMENT_TEAM = 8XPT93F9Q7;
 				INFOPLIST_FILE = "Sample iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.percy.example-xcui";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -403,7 +418,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8XPT93F9Q7;
 				INFOPLIST_FILE = SampleXCUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bsstack.SampleXCUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -418,7 +437,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8XPT93F9Q7;
 				INFOPLIST_FILE = SampleXCUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bsstack.SampleXCUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -458,6 +481,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C5079A829E81EBF00EEF54D /* XCRemoteSwiftPackageReference "percy-xcui-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:percy/percy-xcui-swift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C5079A929E81EBF00EEF54D /* PercyXcui */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C5079A829E81EBF00EEF54D /* XCRemoteSwiftPackageReference "percy-xcui-swift" */;
+			productName = PercyXcui;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 120BE9CF20145CEF00F85F1E /* Project object */;
 }
