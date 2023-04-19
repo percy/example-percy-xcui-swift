@@ -16,7 +16,7 @@
 		120BE9EF20149DCF00F85F1E /* NavLocalTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120BE9EE20149DCF00F85F1E /* NavLocalTesting.swift */; };
 		129187F12018BE35000865ED /* TextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129187F02018BE35000865ED /* TextEditor.swift */; };
 		129187F32018C846000865ED /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129187F22018C846000865ED /* GradientBackground.swift */; };
-		2C5079AA29E81EBF00EEF54D /* PercyXcui in Frameworks */ = {isa = PBXBuildFile; productRef = 2C5079A929E81EBF00EEF54D /* PercyXcui */; };
+		2C5079B329EFF98500EEF54D /* PercyXcui in Frameworks */ = {isa = PBXBuildFile; productRef = 2C5079B229EFF98500EEF54D /* PercyXcui */; };
 		E6A69A5A2032F58A0047EEBF /* SampleXCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A69A592032F58A0047EEBF /* SampleXCUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C5079AA29E81EBF00EEF54D /* PercyXcui in Frameworks */,
+				2C5079B329EFF98500EEF54D /* PercyXcui in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +145,7 @@
 			);
 			name = SampleXCUITests;
 			packageProductDependencies = (
-				2C5079A929E81EBF00EEF54D /* PercyXcui */,
+				2C5079B229EFF98500EEF54D /* PercyXcui */,
 			);
 			productName = SampleXCUITests;
 			productReference = E6A69A572032F58A0047EEBF /* SampleXCUITests.xctest */;
@@ -182,7 +182,7 @@
 			);
 			mainGroup = 120BE9CE20145CEE00F85F1E;
 			packageReferences = (
-				2C5079A829E81EBF00EEF54D /* XCRemoteSwiftPackageReference "percy-xcui-swift" */,
+				2C5079B129EFF98500EEF54D /* XCRemoteSwiftPackageReference "percy-xcui-swift" */,
 			);
 			productRefGroup = 120BE9D820145CEF00F85F1E /* Products */;
 			projectDirPath = "";
@@ -483,9 +483,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2C5079A829E81EBF00EEF54D /* XCRemoteSwiftPackageReference "percy-xcui-swift" */ = {
+		2C5079B129EFF98500EEF54D /* XCRemoteSwiftPackageReference "percy-xcui-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:percy/percy-xcui-swift.git";
+			repositoryURL = "https://github.com/percy/percy-xcui-swift";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -494,9 +494,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2C5079A929E81EBF00EEF54D /* PercyXcui */ = {
+		2C5079B229EFF98500EEF54D /* PercyXcui */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2C5079A829E81EBF00EEF54D /* XCRemoteSwiftPackageReference "percy-xcui-swift" */;
+			package = 2C5079B129EFF98500EEF54D /* XCRemoteSwiftPackageReference "percy-xcui-swift" */;
 			productName = PercyXcui;
 		};
 /* End XCSwiftPackageProductDependency section */

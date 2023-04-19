@@ -45,7 +45,10 @@ class SampleXCUITests: XCTestCase {
         let enterText = "Hi Browserstack!!"
         
         do {
-            try appPercy.screenshot(name: "Second Screenshot")
+            var options = ScreenshotOptions()
+            options.navigationBarHeight = 100
+            options.statusBarHeight = 100
+            try appPercy.screenshot(name: "Second Screenshot", options: options)
         } catch {
             NSLog("App percy screenshot failed")
         }
