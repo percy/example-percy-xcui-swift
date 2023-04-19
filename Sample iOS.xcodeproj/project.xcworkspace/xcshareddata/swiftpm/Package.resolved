@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "percy-xcui-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:percy/percy-xcui-swift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "1cab7cfb01d7104a0ba2f8048fe21bc9266763e2"
+      }
+    }
+  ],
+  "version" : 2
+}
