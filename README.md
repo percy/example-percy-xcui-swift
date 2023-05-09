@@ -26,6 +26,8 @@ This tutorial specifically uses Browserstack App Automate to run XCUI test. For 
 ### Step 2
 # Build ipa & testSuite
 
+Use existing ipa & testSuite files from Resources folder or follow below steps to generate your own.
+
 1. Select the device as "Generic iOS device"
 2. Product -> Clean
 3. Build the ipa
@@ -33,6 +35,7 @@ This tutorial specifically uses Browserstack App Automate to run XCUI test. For 
 	2. Window -> Organizer -> Select the most recently created archive -> Distribute App
 	3. Export for "Development"
 	4. Select the location where you want the ipa to be saved
+
 4. Build the XC UI Tests zip
 	1. Product -> Build For -> Testing
 	2. From the shell, go to the DerivedData directory (normally ~/Library/Developer/Xcode/DerivedData/)
@@ -93,6 +96,10 @@ Update `SampleXCUITests/SampleXCUITests.swift` with following changes
 ```
 let enterText = "Hi Browserstack!!" // Say change this to "Hi Percy!!"
 ```
+or
+
+Use testSuite_2 from resources folder
+
 Follow Step 2 & 3 to generate updated testSuite and upload it to App Automate, only testSuite update is required unless changse are made to main app
 
 ### Step 7
