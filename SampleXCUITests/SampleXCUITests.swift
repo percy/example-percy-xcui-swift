@@ -42,7 +42,15 @@ class SampleXCUITests: XCTestCase {
         //visit the text page
         app.buttons["Text"].tap()
         
-        let enterText = "Hi Browserstack!!"
+        let enterText = "Hi Percy!!"
+        
+        //verify that the text field has come up
+        XCTAssert(app.textFields["Enter a text"].exists)
+        
+        //write the text
+        app.textFields["Enter a text"].tap()
+        app.textFields["Enter a text"].typeText(enterText)
+        app.typeText("\r")
         
         do {
             var options = ScreenshotOptions()
@@ -52,13 +60,6 @@ class SampleXCUITests: XCTestCase {
         } catch {
             NSLog("App percy screenshot failed")
         }
-        //verify that the text field has come up
-        XCTAssert(app.textFields["Enter a text"].exists)
-        
-        //write the text
-        app.textFields["Enter a text"].tap()
-        app.textFields["Enter a text"].typeText(enterText)
-        app.typeText("\r")
         
         //verify that the text entered matches the text view
         XCTAssertEqual(app.staticTexts.element.label, enterText)
