@@ -1,5 +1,5 @@
 # example-percy-xcui-swift
-Example app used by the [Percy XCUI Swift tutorial](https://docs.percy.io/v2-app/docs/xcui-for-swift) demonstrating Percy's XCUI Swift integration.
+Example app used by the [Percy XCUI Swift tutorial](https://docs.percy.io/v2-app/docs/xcuitest) demonstrating Percy's XCUI Swift integration.
 
 ## XCUI Swift Tutorial
 
@@ -26,7 +26,9 @@ This tutorial specifically uses Browserstack App Automate to run XCUI test. For 
 ### Step 2
 # Build ipa & testSuite
 
-Use existing ipa & testSuite files from Resources folder or follow below steps to generate your own.
+We have provided you with a sample application and testSuite in the resources folder that you can use to get started without following the rest of step 2. If you want to use these, simply skip to step 3.
+
+Alternatively, you can need to build your ipa & testSuite from the sample project.
 
 1. Select the device as "Generic iOS device"
 2. Product -> Clean
