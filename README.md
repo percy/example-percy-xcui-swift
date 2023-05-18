@@ -21,6 +21,8 @@ $ git clone https://github.com/percy/example-percy-xcui-swift
 $ cd example-percy-xcui-swift
 ```
 
+This tutorial specifically uses Browserstack App Automate to run XCUI test. For running app percy locally you will need to add a new entry in `etc/hosts` file -> `percy.cli 127.0.0.1`.
+
 ### Step 2
 # Build ipa & testSuite
 
