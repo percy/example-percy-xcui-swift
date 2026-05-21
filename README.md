@@ -1,6 +1,15 @@
 # example-percy-xcui-swift
 Example app used by the [Percy XCUI Swift tutorial](https://docs.percy.io/v2-app/docs/xcuitest) demonstrating Percy's XCUI Swift integration.
 
+> **New:** This repo ships an [`advanced/`](./advanced) matrix + the corresponding `AdvancedScreenshotTests.swift` in `SampleXCUITests/`. XCUI tests must live under the test target, so the `advanced/` dir holds only matrix.yml and README. See the [Percy SDK Feature Matrix](https://docs.percy.io/docs/sdk-feature-matrix) for cross-SDK coverage.
+
+## Examples
+
+| Example | What it shows | Run command |
+|---|---|---|
+| `SampleXCUITests/SampleXCUITests.swift` (basic) | Minimum viable: `appPercy.screenshot(name:)` + a single `ScreenshotOptions` example. Start here. | Open `Sample iOS.xcodeproj` in Xcode and run the test suite. |
+| `SampleXCUITests/AdvancedScreenshotTests.swift` (advanced) | Full applicable App Percy XCUI SDK feature surface: nav + status bar heights, fullscreen, orientation (via `XCUIDevice.shared.orientation`), build metadata via env. See [`advanced/README.md`](./advanced/README.md). | `npx @percy/cli app:exec -- xcodebuild test -only-testing:SampleXCUITests/AdvancedScreenshotTests` |
+
 ## XCUI Swift Tutorial
 
 The tutorial assumes you're already familiar with XCUI and Swift and focuses on using it with App Percy. You'll still

@@ -1,0 +1,44 @@
+name: Advanced — App Percy (XCUI)
+
+# PER-8195 Phase 2 — advanced example for PercyXcui.
+# Triggers manually only (`workflow_dispatch`). XCUI tests require a macOS
+# runner with Xcode + iOS Simulator.
+on:
+  workflow_dispatch:
+
+jobs:
+  advanced:
+    runs-on: macos-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Sanity-check Percy token
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: |
+          if [ -z "$PERCY_TOKEN" ]; then
+            echo "::error::PERCY_TOKEN repo secret is required for the advanced XCUI job."
+            exit 1
+          fi
+      - name: Install @percy/cli
+        run: npm install --no-save @percy/cli@^1.31.13
+      - name: Boot iOS Simulator
+        run: |
+          xcrun simctl boot "iPhone 14" || true
+      - name: Run XCUI advanced tests on iOS Simulator
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          PERCY_BRANCH: ${{ github.ref_name }}
+          PERCY_COMMIT: ${{ github.sha }}
+          PERCY_PROJECT: Percy XCUI Swift Advanced
+          PERCY_BUILD: Advanced XCUI
+        run: |
+          npx @percy/cli app:exec -- \
+            xcodebuild test \
+              -project 'Sample iOS.xcodeproj' \
+              -scheme 'Sample iOS' \
+              -destination 'platform=iOS Simulator,name=iPhone 14' \
+              -only-testing:SampleXCUITests/AdvancedScreenshotTests
